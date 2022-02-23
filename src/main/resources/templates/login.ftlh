@@ -2,7 +2,10 @@
 <#import "parts/login.ftlh" as l>
 
 <@c.page>
-	Login page
-	<@l.login "/login" />
-	<a href="/registration">Add new User</a>
+    <div class="row justify-content-center">
+        <div class="col-sm-4">
+            <div class="fs-4 mb-3 ms-1">Sign in</div>
+            <@l.login "/login" false/>
+        </div>
+    </div>
 </@c.page>
