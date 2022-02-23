@@ -3,7 +3,8 @@
 
 <@c.page>
 	<div>
-		<@l.logout />		
+		<@l.logout />
+        <span><a href="/user">User list</a></span>
 	<div>
 		<form method="post">
 			<input type="text" name="text" placeholder="Enter message">
@@ -14,7 +15,7 @@
 	</div>
 	<div>List of messages</div>
 	<form method="get" action="/main">
-		<input type="text" name="filter" value="${filter}">
+		<input type="text" name="filter" value="${filter?ifExists}">
 		<button type="submit">Find</button>
 	</form>
 	<#list messages as message>
