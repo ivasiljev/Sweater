@@ -17,6 +17,11 @@
                 <li class="nav-item">
                     <a class="nav-link fs-5" aria-current="page" href="/main">Messages</a>
                 </li>
+                <#if user??>
+                <li class="nav-item">
+                    <a class="nav-link fs-5" aria-current="page" href="/profile">Profile</a>
+                </li>
+                </#if>
                 <#if isAdmin>
                 <li class="nav-item">
                     <a class="nav-link fs-5" aria-current="page" href="/user">User list</a>

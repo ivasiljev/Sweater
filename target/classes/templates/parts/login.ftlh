@@ -12,6 +12,15 @@
             <label for="floatingPassword">Password</label>
         </div>
     </div>
+    <#if isRegisterForm>
+    <div class="row mb-3 mx-1">
+        <div class="form-floating col p-0">
+            <input type="email" class="form-control" id="floatingEmail" name="email" placeholder="Email"/>
+            <label for="floatingEmail">Email</label>
+        </div>
+    </div>
+    </#if>
+
     <input type="hidden" name="_csrf" value=${_csrf.token} />
     <div class="row mb-3 mx-1">
         <button type="submit" class="btn btn-primary col-auto"><#if isRegisterForm>Create<#else>Sign in</#if></button>
