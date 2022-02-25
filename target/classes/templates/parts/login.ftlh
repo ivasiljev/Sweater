@@ -53,6 +53,14 @@
                 </#if>
             </div>
         </div>
+        <div class="mb-2 mx-1">
+            <div class="g-recaptcha" data-sitekey="6LfSHZ8eAAAAAP5o2LuQQA7j71rNZTHjwiZzR8hg"></div>
+            <#if captchaError??>
+                <div class="alert alert-danger" role="alert">
+                    ${captchaError}
+                </div>
+            </#if>
+        </div>
     </#if>
 
     <div class="row mb-3 mx-1">
