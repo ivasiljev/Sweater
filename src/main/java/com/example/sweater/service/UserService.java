@@ -28,11 +28,17 @@ public class UserService implements UserDetailsService {
     private MailSender mailSender;
 
     @Autowired
-    private PasswordEncoder passwordEncoder;
+    public PasswordEncoder passwordEncoder;
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		return userRepo.findByUsername(username);
+        User user = userRepo.findByUsername(username);
+
+        if (user == null) {
+            throw new UsernameNotFoundException("User not found!");
+        }
+
+		return user;
 	}
 
     public boolean addUser(User user) {
@@ -120,7 +126,7 @@ public class UserService implements UserDetailsService {
 
         if (newPassword != null) {
             if (!newPassword.isEmpty()) {
-                user.setPassword(newPassword);
+                user.setPassword(passwordEncoder.encode(newPassword));
             }
         }
 
